@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :studios
   has_one_attached :avatar
 
   # Include default devise modules. Others available are:
