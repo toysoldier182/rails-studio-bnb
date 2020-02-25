@@ -13,4 +13,8 @@
 
   </div>
 </div>
+<% if @user.avatar.present? %>
 
+  <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %>
+
+<% end %>
