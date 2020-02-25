@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <h2><%= @studio.name %></h2>
+  <p><%= @studio.location %></p>
+  <p>$<%= @studio.price %></p>
+  <%= link_to "Edit", edit_studio_path(@studio)  %>
+  <%= link_to "Back", studios_path %>
+  <%= link_to "Delete", studio_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>

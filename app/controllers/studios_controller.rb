@@ -24,12 +24,14 @@ class StudiosController < ApplicationController
   def edit; end
 
   def update
-    @studio = Studio.update(studio_params)
+    @studio.update(studio_params)
+    redirect_to studio_path(@studio)
   end
+
 
   def destroy
     @studio.destroy
-    redirect_to user_path(current_user)
+    redirect_to studios_path
   end
 
   private
