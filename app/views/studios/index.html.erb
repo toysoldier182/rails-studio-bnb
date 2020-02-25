@@ -3,7 +3,7 @@
 <% @studios.each do |studio| %>
  <p> <%= studio.name %> in
   <%= studio.location %> for
-<%= studio.price %></p> <span><%= link_to "Check Studio", studio_path(studio)%> </span>
+  <%= studio.price %></p> <span><%= link_to "Check Studio", studio_path(studio)%> </span>
 <% end %>
 
 <div class="mt-4">
