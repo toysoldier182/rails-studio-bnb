@@ -1,5 +1,5 @@
 class StudiosController < ApplicationController
-  before_action :find_studio, only: [:show, :edit, :update, :destroy]
+  before_action :find_studio, only: [:show, :edit, :destroy]
 
   def index
     @studios = Studio.all
@@ -25,11 +25,14 @@ class StudiosController < ApplicationController
 
   def update
     @studio = Studio.update(studio_params)
+    redirect_to studio_path(@studio)
+    raise
   end
+
 
   def destroy
     @studio.destroy
-    redirect_to user_path(current_user)
+    redirect_to studios_path
   end
 
   private
