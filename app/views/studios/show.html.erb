@@ -2,7 +2,27 @@
   <h2><%= @studio.name %></h2>
   <p><%= @studio.location %></p>
   <p>$<%= @studio.price %></p>
-  <%= link_to "Edit", edit_studio_path(@studio)  %>
+
   <%= link_to "Back", studios_path %>
-  <%= link_to "Delete", studio_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+  <% if current_user == @studio.user %>
+    <%= link_to "Edit", edit_studio_path(@studio) %>
+    <%= link_to "Delete", studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+  <% end %>
+
+  <h3 class="mt-4">Bookings:</h3>
+
+  <% @studio.bookings.each do |booking| %>
+  <div class="booking-card">
+    <p>Booking from: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+    <p>Description: <%= booking.description %></p>
+    <p>From: <%= booking.booking_date_start %></p>
+    <p>Until: <%= booking.booking_date_end %></p>
+  </div>
+  <% end %>
+
+  <% if current_user != @studio.user  %>
+    <%= link_to "Add Booking", new_studio_booking_path(@studio), class: "btn btn-success" %>
+  <% end %>
+  <br>
+
 </div>
