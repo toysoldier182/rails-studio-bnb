@@ -1,0 +1,22 @@
+.homepage-banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .banner-text {
+      color: white;
+      z-index: 1;
+      position: absolute;
+      overflow: none;
+      // left: 40px;
+      // bottom: 40px;
+  }
+
+  #banner-carousel {
+    .carousel-inner {
+      height: 60vh;
+    }
+  }
+}
