@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to studios_path, class: "navbar-brand" do %>
     <i class="fas fa-sliders-h"></i><h1>studiobnb</h1>
     <% end %>
 
@@ -20,9 +20,10 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", "#", class: "dropdown-item" %> <!-- user_path(current_user) -->
+            <%= link_to "Profile", "#", class: "dropdown-item" %> <!-- users_path(current_user) -->
             <%= link_to "Bookings", "#", class: "dropdown-item" %> <!-- bookings_path(current_user) -->
             <%= link_to "Messages", "#", class: "dropdown-item" %>
+            <%= link_to "Settings", "#", class: "dropdown-item" %> <!-- edit_user_path(current_user) -->
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
