@@ -1,9 +1,6 @@
 class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :edit, :update, :destroy]
 
-  # def index
-  #   @bookings = Booking.all
-  # end
   def index
     @bookings = Booking.where(user_id: params[:user_id])
   end
