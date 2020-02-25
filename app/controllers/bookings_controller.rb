@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
 
   def create
     @studio = Studio.find(params[:studio_id])
-    @user = User.find(params[:user_id])
+    @user = @studio.user
     @booking = Booking.new(validate_booking)
     @booking.user = @user
     if @booking.save
