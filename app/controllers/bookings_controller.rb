@@ -4,6 +4,9 @@ class BookingsController < ApplicationController
   # def index
   #   @bookings = Booking.all
   # end
+  def index
+    @bookings = Booking.where(user_id: @user)
+  end
 
   def show; end
 
@@ -12,15 +15,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # @booking = Booking.new(params[:id])
     @studio = Studio.find(params[:studio_id])
-    @booking = Booking.new(validate_booking)
     @user = User.find(params[:user_id])
+    @booking = Booking.new(validate_booking)
     @booking.user = @user
     if @booking.save
       redirect_to booking_path(@booking)
     else
       render :new
+    end
   end
 
   def edit; end
@@ -35,8 +38,6 @@ class BookingsController < ApplicationController
   end
 
   private
-
-  def find
 
   def find_booking
     @booking = Booking.find(params[:id])
