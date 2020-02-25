@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   get '/profile', to: 'users#show'
 
-  resources :studios, only: [:new, :create] do
+  resources :studios do
     resources :bookings, only: [:new, :create]
   end
 
+  resources :users, only: [] do
+   resources :bookings, except: [:new, :create]
+  end
 end
