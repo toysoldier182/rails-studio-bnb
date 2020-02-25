@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :studios do
     resources :bookings, only: [:new, :create]
   end
-
+  
   resources :users, only: [] do
    resources :bookings, except: [:new, :create]
   end
