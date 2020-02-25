@@ -6,17 +6,25 @@
   text-align: center;
 
   .banner-text {
-      color: white;
-      z-index: 1;
-      position: absolute;
-      overflow: none;
-      // left: 40px;
-      // bottom: 40px;
+    font-size: 0.8em;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    overflow: none;
+    width: 50vw;
+
+    .banner-cta {
+      margin-top: 32px;
+    }
   }
 
   #banner-carousel {
     .carousel-inner {
       height: 60vh;
+
+      img {
+        max-width: 100%;
+      }
     }
   }
 }

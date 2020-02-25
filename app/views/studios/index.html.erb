@@ -1,7 +1,8 @@
 <div class="homepage-banner">
   <div class="banner-text">
       <h2>Welcome to studiobnb</h2>
-      <p><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
+      <p>Here is a snazzy, punchy blip of unimportant information to get you excited about spending money on a recording studio owned by someone much wealthier than you. Book a studio <strong>today</strong>.</p>
+      <p class="banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
   </div>
   <div id="banner-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
     <div class="carousel-inner">
@@ -18,16 +19,10 @@
   </div>
 </div>
 
-<!-- <div class="studios-search">
-  <p>studio search here</p>
-</div>
-
-<h3>Browse our studios</h3> -->
-
 <div class="studios">
   <% @studios.each do |studio| %>
     <%= link_to studio_path(studio) do %>
-      <div class="studio-card", style="background-image: linear-gradient(-155deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1560844915-bb3189e146ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2031&q=80'); background-size: cover;">
+      <div class="studio-card", style="background-image: linear-gradient(-155deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.merriammusic.com%2F2016%2F02%2Frecording-studio-control-room-center.jpg&f=1&nofb=1'); background-size: cover;">
         <div class="studio-card-info">
           <h4><%= studio.name %></h4>
           <p><i class="fas fa-map-marker-alt"></i> <%= studio.location %></p>
