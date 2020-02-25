@@ -1,5 +1,3 @@
-
-
 <div class="studios">
   <% @studios.each do |studio| %>
     <%= link_to studio_path(studio) %>
@@ -10,4 +8,18 @@
       </div>
     <% end %>
   <% end %>
+</div>
+
+<!-- JC WORK BELOW -->
+
+<h1>All studios</h1>
+
+<% @studios.each do |studio| %>
+ <p> <%= studio.name %> in
+  <%= studio.location %> for
+  <%= studio.price %></p> <span><%= link_to "Check Studio", studio_path(studio)%> </span>
+<% end %>
+
+<div class="mt-4">
+  <%= link_to "Add a studio", new_studio_path %>
 </div>
