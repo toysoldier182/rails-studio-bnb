@@ -13,6 +13,6 @@ end
     name: Faker::Address.street_name,
     location: Faker::Address.street_address,
     price: rand(1..100),
-    user_id: rand(1..50),
+    user_id: rand(1..50)
     )
 end
