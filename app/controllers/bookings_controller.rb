@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   #   @bookings = Booking.all
   # end
   def index
-    @bookings = Booking.where(user_id: @user)
+    @bookings = Booking.where(user_id: params[:user_id])
   end
 
   def show; end
