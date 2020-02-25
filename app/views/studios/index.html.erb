@@ -1,0 +1,12 @@
+<h1>All studios</h1>
+
+<% @studios.each do |studio| %>
+ <p> <%= studio.name %> in
+  <%= studio.location %> for
+  <%= studio.price %></p> <span><%= link_to "Check Studio", studio_path(studio)%> </span>
+<% end %>
+
+<div class="mt-4">
+  <%= link_to "Add a studio", new_studio_path %>
+</div>
+

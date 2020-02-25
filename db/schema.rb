@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_114557) do
     t.string "name"
     t.string "location"
     t.boolean "availability"
-    t.decimal "price", precision: 10, scale: 2
+    t.integer "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
