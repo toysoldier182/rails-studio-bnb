@@ -1,0 +1,13 @@
+
+
+<div class="studios">
+  <% @studios.each do |studio| %>
+    <%= link_to studio_path(studio) %>
+      <div class="studio-card">
+        <h3><%= studio.name %></h3>
+        <p><%= studio.location %></p>
+        <p><i class="fas fa-pound-sign"></i><%= studio.price %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
