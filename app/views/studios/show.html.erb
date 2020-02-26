@@ -32,27 +32,26 @@
       </div>
     </div>
     <div class="studio-info">
-      <h2><%= @studio.name %></h2>
       <div class="studio-details">
+        <h1><%= @studio.name %></h1>
         <p><i class="fas fa-map-marker-alt"></i> <%= @studio.location %></p>
         <p><i class="fas fa-pound-sign"></i> <%= @studio.price %></p>
       </div>
       <div class="studio-description">
         <h5>Description</h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ab dolore earum vero in quae enim illo, praesentium? Fugit ipsa assumenda ratione sed ut iure corrupti aliquid hic cum quibusdam consequatur aspernatur quasi ullam consectetur animi dolore eaque, natus maxime!</p>
+
+        <% if current_user == @studio.user %>
+          <%= link_to "Edit", edit_studio_path(@studio) %>
+          <%= link_to "Delete", studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+        <% end %>
+
+        <% if current_user != @studio.user  %>
+          <%= link_to "book this studio", new_studio_booking_path(@studio) %>
+        <% end %>
       </div>
     </div>
   </div>
-
-
-  <% if current_user == @studio.user %>
-    <%= link_to "Edit", edit_studio_path(@studio) %>
-    <%= link_to "Delete", studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
-  <% end %>
-
-  <% if current_user != @studio.user  %>
-    <%= link_to "book this studio", new_studio_booking_path(@studio) %>
-  <% end %>
 
   <div class="user-bookings">
     <div class="bookings-card-headers">

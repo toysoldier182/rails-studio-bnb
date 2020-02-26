@@ -21,8 +21,23 @@
 .studio-info {
   // border: 1px solid green;
   flex-basis: 50%;
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p, i {
+    margin: 0;
+    font-size: 1em;
+  }
+}
+
+.studio-details {
+  margin-bottom: 32px;
 }
 
 .studio-description {
-  // border: 1px solid blue;
+  p{
+    margin-bottom: 16px;
+  }
 }
