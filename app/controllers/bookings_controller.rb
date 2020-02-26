@@ -8,16 +8,17 @@ class BookingsController < ApplicationController
   def show; end
 
   def new
+    @studio = Studio.find(params[:studio_id])
     @booking = Booking.new
   end
 
   def create
     @studio = Studio.find(params[:studio_id])
-    @user = @studio.user
     @booking = Booking.new(validate_booking)
-    @booking.user = @user
+    @booking.studio = @studio
+    @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to studio_path(@booking.studio)
     else
       render :new
     end

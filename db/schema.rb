@@ -15,19 +15,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_114557) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-  create_table "bookings", force: :cascade do |t|
-    t.date "booking_date_start"
-    t.date "booking_date_end"
-    t.string "description"
-    t.boolean "approval"
-    t.bigint "user_id", null: false
-    t.bigint "studio_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["studio_id"], name: "index_bookings_on_studio_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,6 +34,19 @@ ActiveRecord::Schema.define(version: 2020_02_25_114557) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "booking_date_start"
+    t.date "booking_date_end"
+    t.string "description"
+    t.boolean "approval"
+    t.bigint "user_id", null: false
+    t.bigint "studio_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["studio_id"], name: "index_bookings_on_studio_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "studios", force: :cascade do |t|
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_114557) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "studios"
   add_foreign_key "bookings", "users"
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "studios", "users"
 end
