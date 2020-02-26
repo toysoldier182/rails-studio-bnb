@@ -1,22 +1,28 @@
+.studio-container {
+  padding: 16px;
+}
+
 .studio-summary {
-  border: 1px solid purple;
+  // border: 1px solid purple;
   display: flex;
 }
 
 .studio-photos {
-  width: 50vw;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin-right: 16px;
+  flex-basis: 50%;
+  height: 100%;
+
+  .carousel-inner {
+    border-radius: 8px;
+  }
 }
 
 .studio-info {
-  border: 1px solid green;
-  flex-grow: 1;
+  // border: 1px solid green;
+  flex-basis: 50%;
 }
 
 .studio-description {
-  border: 1px solid blue;
-  padding: 16px 32px;
-}
-
-.studio-bookings {
-
+  // border: 1px solid blue;
 }
