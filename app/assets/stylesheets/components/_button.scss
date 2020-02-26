@@ -1,0 +1,13 @@
+.btn-banner {
+  background: white;
+  color: black;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin: 0 4px;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+    background: rgba(255, 255, 255, 0.9);
+  }
+}

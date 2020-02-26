@@ -1,5 +1,32 @@
 .studio-card {
-  border: 1px solid red;
+  border-radius: 2px;
   background: grey;
-  padding: 8px;
+  padding: 16px;
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+.studio-card-info {
+  h4 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.7em;
+    margin: 0;
+  }
+}
+
+  .studio-card-price {
+    i {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }

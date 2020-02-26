@@ -18,3 +18,7 @@
   <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %>
 
 <% end %>
+
+<div class="mt-4">
+  <%= link_to "Add a studio", new_studio_path %>
+</div>
