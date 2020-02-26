@@ -1,3 +1,9 @@
+///////////////// USERS /////////////////
+
+//-------- user cards here --------//
+
+///////////////// STUDIOS /////////////////
+
 .studio-card {
   border-radius: 2px;
   background: grey;
@@ -30,3 +36,70 @@
       margin: 0;
     }
   }
+
+///////////////// BOOKINGS /////////////////
+
+.bookings-card-headers {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 6px 0 6px;
+  margin: 6px 6px 12px 6px;
+
+  .bookings-card-section {
+    width: 25%;
+    text-align: left;
+    margin: 4px 4px 0 4px;
+    border-bottom: 0.75px solid rgba(0, 0, 0, 0.1);
+
+    p {
+      margin: 0;
+      font-size: 0.65em;
+    }
+  }
+}
+
+.bookings-card {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 4px;
+  padding: 6px;
+  margin: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .bookings-card-section {
+    width: 25%;
+    text-align: left;
+    margin: 4px;
+
+    p {
+      margin: 0;
+      font-size: 0.7em;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
