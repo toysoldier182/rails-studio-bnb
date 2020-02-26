@@ -34,8 +34,20 @@
           <% end %>
         </div>
       <% end %>
-      <% if @user.studio.bookings %>
+      <% if @bookings %>
         <div class="studio-bookings">
+          <h3>Requested bookings:</h3>
+            <% @bookings.each do |booking| %>
+              <div class="booking-card">
+                <img src="https://audioxpress.com/assets/upload/images/1/20190305171546_HomeStudio-P1251163Web.jpg" style="width: 200px; height: 150px; background-size: contain;" alt="">
+                <div class="booking-info">
+                  <h4><%= booking.studio.name %></h4>
+                  <p><%= booking.description %></p>
+                  <p><%= booking.studio.location %></p>
+                </div>
+              </div>
+          <% end %>
+        </div>
         </div>
       <% end %>
     </div>
