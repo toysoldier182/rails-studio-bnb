@@ -1,0 +1,43 @@
+.studio-container {
+  padding: 16px;
+}
+
+.studio-summary {
+  // border: 1px solid purple;
+  display: flex;
+}
+
+.studio-photos {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin-right: 16px;
+  flex-basis: 50%;
+  height: 100%;
+
+  .carousel-inner {
+    border-radius: 8px;
+  }
+}
+
+.studio-info {
+  // border: 1px solid green;
+  flex-basis: 50%;
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p, i {
+    margin: 0;
+    font-size: 1em;
+  }
+}
+
+.studio-details {
+  margin-bottom: 32px;
+}
+
+.studio-description {
+  p{
+    margin-bottom: 16px;
+  }
+}
