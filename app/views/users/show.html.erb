@@ -29,7 +29,7 @@
             <p><strong>studio</strong></p>
           </div>
           <div class="bookings-card-section">
-            <p><strong>guest</strong></p>
+            <p><strong>host</strong></p>
           </div>
           <div class="bookings-card-section">
             <p><strong>description</strong></p>
@@ -47,7 +47,7 @@
             <p><%= booking.studio.name %></p>
           </div>
           <div class="bookings-card-section">
-            <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            <p><%= booking.studio.user.first_name %> <%= booking.studio.user.last_name %></p>
           </div>
           <div class="bookings-card-section">
             <p><%= booking.description %></p>
@@ -69,7 +69,7 @@
             <p><strong>studio</strong></p>
           </div>
           <div class="bookings-card-section">
-            <p><strong>host</strong></p>
+            <p><strong>guest</strong></p>
           </div>
           <div class="bookings-card-section">
             <p><strong>description</strong></p>
