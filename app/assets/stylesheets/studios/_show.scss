@@ -1,0 +1,22 @@
+.studio-summary {
+  border: 1px solid purple;
+  display: flex;
+}
+
+.studio-photos {
+  width: 50vw;
+}
+
+.studio-info {
+  border: 1px solid green;
+  flex-grow: 1;
+}
+
+.studio-description {
+  border: 1px solid blue;
+  padding: 16px 32px;
+}
+
+.studio-bookings {
+
+}
