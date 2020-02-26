@@ -1,0 +1,19 @@
+#banner-carousel {
+  .carousel-inner {
+    height: 60vh;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+#studio-carousel {
+  .carousel-inner {
+    height: 100%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

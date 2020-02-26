@@ -19,38 +19,93 @@
           </div>
         </div>
       </div>
-      <% if @user.bookings%>
-        <div class="booking-container">
-          <h3>Your bookings:</h3>
-            <% @user.bookings.each do |booking| %>
-              <div class="booking-card">
-                <img src="https://audioxpress.com/assets/upload/images/1/20190305171546_HomeStudio-P1251163Web.jpg" style="width: 200px; height: 150px; background-size: contain;" alt="">
-                <div class="booking-info">
-                  <h4><%= booking.studio.name %></h4>
-                  <p><%= booking.description %></p>
-                  <p><%= booking.studio.location %></p>
-                </div>
-              </div>
-          <% end %>
+
+    <div class="container mt-4">
+    <% if @user.bookings %>
+      <div class="user-bookings">
+        <h5>My bookings:</h5>
+        <div class="bookings-card-headers">
+          <div class="bookings-card-section">
+            <p><strong>studio</strong></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><strong>host</strong></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><strong>description</strong></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><strong>start date</strong></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><strong>end date</strong></p>
+          </div>
+        </div>
+      <% @user.bookings.each do |booking| %>
+        <div class="bookings-card">
+          <div class="bookings-card-section">
+            <p><%= booking.studio.name %></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><%= booking.studio.user.first_name %> <%= booking.studio.user.last_name %></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><%= booking.description %></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><%= booking.booking_date_start %></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><%= booking.booking_date_end %></p>
+          </div>
         </div>
       <% end %>
-      <% if @bookings %>
-        <div class="studio-bookings">
-          <h3>Requested bookings:</h3>
-            <% @bookings.each do |booking| %>
-              <div class="booking-card">
-                <img src="https://audioxpress.com/assets/upload/images/1/20190305171546_HomeStudio-P1251163Web.jpg" style="width: 200px; height: 150px; background-size: contain;" alt="">
-                <div class="booking-info">
-                  <h4><%= booking.studio.name %></h4>
-                  <p><%= booking.description %></p>
-                  <p><%= booking.studio.location %></p>
-                </div>
-              </div>
-          <% end %>
+    <% end %>
+    <% if @studios %>
+      <div class="user-bookings mt-4">
+        <h5>Manage your requests:</h5>
+        <div class="bookings-card-headers">
+          <div class="bookings-card-section">
+            <p><strong>studio</strong></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><strong>guest</strong></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><strong>description</strong></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><strong>start date</strong></p>
+          </div>
+          <div class="bookings-card-section">
+            <p><strong>end date</strong></p>
+          </div>
         </div>
-        </div>
+      <% @studios.each do |studio| %>
+        <% studio.bookings.each do |booking| %>
+          <div class="bookings-card">
+            <div class="bookings-card-section">
+              <p><%= booking.studio.name %></p>
+            </div>
+            <div class="bookings-card-section">
+              <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            </div>
+            <div class="bookings-card-section">
+              <p><%= booking.description %></p>
+            </div>
+            <div class="bookings-card-section">
+              <p><%= booking.booking_date_start %></p>
+            </div>
+            <div class="bookings-card-section">
+              <p><%= booking.booking_date_end %></p>
+            </div>
+          </div>
+        <% end %>
       <% end %>
+    <% end %>
+
     </div>
+  </div>
 </div>
 
 
@@ -73,4 +128,4 @@
   </div>
 
   </div>
-</div> -->
+
