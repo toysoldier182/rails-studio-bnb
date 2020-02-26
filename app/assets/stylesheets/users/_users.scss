@@ -1,0 +1,36 @@
+.background-image {
+  // background-image: linear-gradient(rgba(240, 64, 64, 0.1), #e66425);
+  margin-top: 16px;
+  height: 200px;
+  background-size: contain;
+}
+
+.user-container {
+  width: 75%;
+  margin: auto;
+}
+.user {
+  display: flex;
+}
+
+.user-info {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .bio {
+
+  }
+}
+
+.booking-container {
+  margin-top: 50px;
+  align-content: center;
+
+}
+
+.studio-bookings {
+  margin-top: 50px;
+  align-content: center;
+}

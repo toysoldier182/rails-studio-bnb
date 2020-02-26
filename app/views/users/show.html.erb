@@ -1,24 +1,64 @@
-<div class="container">
+<div class="background-image">
+    <div class="user-container">
+      <div class="user">
+        <div class="user-image">
+            <% if @user.avatar.present? %>
+              <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill, class: 'profile-avatar' %>
+          <% end %>
+        </div>
+        <div class="user-info">
+          <h1>
+            <%= @user.first_name %> <%= @user.last_name %>
+          </h1>
+          <div class="bio">
+            <%= @user.bio %>
+          </div>
+          <div class="user-controls mt-4">
+            <h3 class="btn btn-success"><%= link_to "Add a studio", new_studio_path %></h3>
+            <h3 class="btn btn-warning"><%= link_to "Edit account", edit_user_registration_path %></h3>
+          </div>
+        </div>
+      </div>
+      <% if @user.bookings%>
+        <div class="booking-container">
+          <h3>Your bookings:</h3>
+            <% @user.bookings.each do |booking| %>
+              <div class="booking-card">
+                <img src="https://audioxpress.com/assets/upload/images/1/20190305171546_HomeStudio-P1251163Web.jpg" style="width: 200px; height: 150px; background-size: contain;" alt="">
+                <div class="booking-info">
+                  <h4><%= booking.studio.name %></h4>
+                  <p><%= booking.description %></p>
+                  <p><%= booking.studio.location %></p>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      <% end %>
+      <% if @user.studio.bookings %>
+        <div class="studio-bookings">
+        </div>
+      <% end %>
+    </div>
+</div>
+
+
+<!-- <div class="container d-flex justify-content-between">
   <div class="row text-center">
     <h1>
       <%= @user.first_name %> <%= @user.last_name %>
     </h1>
+    <div>
+      <% if @user.avatar.present? %>
+        <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill, class: 'profile-avatar' %>
+    </div>
+    <% end %>
+    <div class="cards-container">
   </div>
   <div class="image-container">
   </div>
   <div class="description-container">
     <%= @user.bio %>
   </div>
-  <div class="cards-container">
 
   </div>
-</div>
-<% if @user.avatar.present? %>
-
-  <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %>
-
-<% end %>
-
-<div class="mt-4">
-  <%= link_to "Add a studio", new_studio_path %>
-</div>
+</div> -->

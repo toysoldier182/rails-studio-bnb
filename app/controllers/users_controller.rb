@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
+    @studios = Studio.where(studio.user == current_user)
   end
 
   def article_params

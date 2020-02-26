@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :studios
+  has_many :bookings
   has_one_attached :avatar
   # Include default devise modules. Others available are:
   # :confirmable, :omniauthable, :lockable,

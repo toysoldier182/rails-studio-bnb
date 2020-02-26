@@ -30,3 +30,28 @@
       margin: 0;
     }
   }
+
+
+// Booking Cards - used on profile page
+
+.booking-card {
+  display: flex;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  height: 150px;
+  width: 600px;
+  font-size: 14px;
+  margin: 20px 0px;
+
+  img {
+    background-size: contain;
+    // background-image: url(https://audioxpress.com/assets/upload/images/1/20190305171546_HomeStudio-P1251163Web.jpg);
+  }
+
+  .booking-info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+}
