@@ -52,43 +52,4 @@
       </div>
     </div>
   </div>
-
-  <div class="user-bookings">
-    <div class="bookings-card-headers">
-      <div class="bookings-card-section">
-        <p><strong>studio</strong></p>
-      </div>
-      <div class="bookings-card-section">
-        <p><strong>user</strong></p>
-      </div>
-      <div class="bookings-card-section">
-        <p><strong>description</strong></p>
-      </div>
-      <div class="bookings-card-section">
-        <p><strong>start date</strong></p>
-      </div>
-      <div class="bookings-card-section">
-        <p><strong>end date</strong></p>
-      </div>
-    </div>
-    <% @studio.bookings.each do |booking| %>
-      <div class="bookings-card">
-        <div class="bookings-card-section">
-          <p><%= booking.studio.name %></p>
-        </div>
-        <div class="bookings-card-section">
-          <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
-        </div>
-        <div class="bookings-card-section">
-          <p><%= booking.description %></p>
-        </div>
-        <div class="bookings-card-section">
-          <p><%= booking.booking_date_start %></p>
-        </div>
-        <div class="bookings-card-section">
-          <p><%= booking.booking_date_end %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
 </div>

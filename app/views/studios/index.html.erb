@@ -2,7 +2,10 @@
   <div class="banner-text">
       <h2>Welcome to studiobnb</h2>
       <p>Here is a snazzy, punchy blip of unimportant information to get you excited about spending money on a recording studio owned by someone much wealthier than you. Book a studio <strong>today</strong>.</p>
-      <p class="banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
+
+      <% if !current_user %>
+        <p class="banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
+      <% end %>
   </div>
   <div id="banner-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
     <div class="carousel-inner">
