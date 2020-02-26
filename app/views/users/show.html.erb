@@ -13,11 +13,14 @@
 
   </div>
 </div>
-<% if @user.avatar.present? %>
+<% if @user.avatar.attached? %>
 
   <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %>
 
 <% end %>
+
+<%#= cl_image_tag "sw6770g6hizcl4mhtlpz9m31s3wz", height: 300, width: 400, crop: :fill %>
+
 
 <div class="mt-4">
   <%= link_to "Add a studio", new_studio_path %>
