@@ -7,6 +7,7 @@
         <p class="banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
       <% end %>
   </div>
+
   <div id="banner-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -21,6 +22,15 @@
     </div>
   </div>
 </div>
+
+<%= form_tag studios_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a studio"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
 <div class="studios">
   <% @studios.each do |studio| %>

@@ -3,7 +3,11 @@ class StudiosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @studios = Studio.all
+    if params[:query].present?
+      @studios = Studio.where("location ILIKE ?", "%#{params[:query]}%")
+    else
+      @studios = Studio.all
+    end
   end
 
   def show
