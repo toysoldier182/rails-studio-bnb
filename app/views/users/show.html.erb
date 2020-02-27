@@ -1,32 +1,48 @@
-<div class="background-image">
-  <div class="user-container">
-    <div class="user">
-      <div class="user-image">
-          <% if @user.avatar.present? %>
-            <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill, class: 'profile-avatar' %>
-        <% end %>
-      </div>
-      <div class="user-info">
-        <h1>
-          <%= @user.first_name %> <%= @user.last_name %>
-        </h1>
-        <div class="bio">
-          <%= @user.bio %>
-        </div>
-        <div class="user-controls mt-4">
-          <h3 class="btn btn-success"><%= link_to "Add a studio", new_studio_path %></h3>
-          <h3 class="btn btn-warning"><%= link_to "Edit account", edit_user_registration_path %></h3>
-        </div>
-      </div>
+<div class="profile-container">
+  <div class="user-summary">
+    <div class="user-image">
+      <% if current_user.avatar.present? %>
+        <%= cl_image_tag current_user.avatar.key, class: 'profile-avatar' %>
+      <% else %>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.seattlefish.com%2Fwp-content%2Fthemes%2Fseattlefish%2Fimg%2Fplaceholder.png&f=1&nofb=1" alt="no image vailable">
+      <% end %>
     </div>
 
-    <div class="container mt-4">
-      <% if @user.bookings %>
-        <%= render "bookings/my_bookings" %>
-      <% end %>
-      <% if @studios.first != nil %>
-        <%= render "bookings/host_bookings" %>
-      <% end %>
+    <div class="user-info">
+      <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+      <p><%= current_user.bio %></p>
+    </div>
+    <div class="user-controls">
+      <%= link_to "add a studio", new_studio_path, class: 'btn-outline' %>
+      <%= link_to "edit account", edit_user_registration_path, class: 'btn-outline' %>
     </div>
   </div>
+
+  <div class="profile-bookings">
+    <% if current_user.studios.first.bookings.first != nil %>
+      <div class="bookings-host">
+        <h5>booking requests</h5>
+        <%= render "bookings/host_bookings" %>
+      </div>
+    <% end %>
+    <% if current_user.bookings %>
+      <div class="bookings-rent">
+        <h5>your upcoming bookings</h5>
+        <%= render "bookings/user_bookings" %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>

@@ -1,28 +1,26 @@
-<div class="user-bookings mt-4">
-  <h5>Manage your requests:</h5>
-  <div class="bookings-card-headers">
-    <div class="bookings-card-section">
-      <p><strong>studio</strong></p>
-    </div>
-    <div class="bookings-card-section">
-      <p><strong>guest</strong></p>
-    </div>
-    <div class="bookings-card-section">
-      <p><strong>description</strong></p>
-    </div>
-    <div class="bookings-card-section">
-      <p><strong>start date</strong></p>
-    </div>
-    <div class="bookings-card-section">
-      <p><strong>end date</strong></p>
-    </div>
+<div class="bookings-card-headers">
+  <div class="bookings-card-section">
+    <p><strong>studio</strong></p>
+  </div>
+  <div class="bookings-card-section">
+    <p><strong>guest</strong></p>
+  </div>
+  <div class="bookings-card-section">
+    <p><strong>description</strong></p>
+  </div>
+  <div class="bookings-card-section">
+    <p><strong>start date</strong></p>
+  </div>
+  <div class="bookings-card-section">
+    <p><strong>end date</strong></p>
   </div>
 </div>
+
 <% @studios.each do |studio| %>
   <% studio.bookings.each do |booking| %>
     <div class="bookings-card">
       <div class="bookings-card-section">
-        <p><%= booking.studio.name %></p>
+        <p><%= link_to "#{booking.studio.name}", studio_path(studio) %></p>
       </div>
       <div class="bookings-card-section">
         <p><%= booking.studio.user.first_name %> <%= booking.studio.user.last_name %></p>
