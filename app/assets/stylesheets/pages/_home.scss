@@ -1,1 +1,59 @@
-// Specific CSS for your home-page
+
+.home-banner {
+  background-image: url("https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-size: contain;
+  display: flex;
+  flex-basis: 0;
+  //opacity: 0.6;
+  height: 94vh;
+}
+
+.home-text {
+  text-align: left;
+  width: 60%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-size: 60%;
+
+}
+
+.text-box {
+  background-color: rgba(244,244,244, 0.7);
+  box-shadow: 1px 0px 20px rgb(244,244,242);
+  width: 80%;
+  align-self: center;
+}
+
+.button-box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-container {
+  height: 35vh;
+  display: flex;
+  flex-basis: 0;
+  padding-top: 10px;
+  margin: 50px 30px;
+}
+
+.info-image {
+  background-image: url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 2px 0px 10px lightgrey;
+}
+
+.info-text{
+  width: 50%;
+  padding: 20px;
+  align-content: center;
+}
+
+
+
