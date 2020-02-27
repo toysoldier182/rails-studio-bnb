@@ -1,8 +1,11 @@
 <div class="studio-container">
   <div class="studio-summary">
     <div class="studio-details">
-      <h1><%= @studio.name %></h1>
-      <div class="studio-sub-details">
+      <div class="studio-details-head">
+        <h1><%= @studio.name %></h1>
+        <p>hosted by <%= link_to "#{@studio.user.first_name} #{@studio.user.last_name}", profile_path(@studio.user) %></p>
+      </div>
+      <div class="studio-details-foot">
         <p class="studio-location"><i class="fas fa-map-marker-alt"></i><%= @studio.location %></p>
         <p class="studio-price"><i class="fas fa-pound-sign"></i><%= @studio.price %> / day</p>
       </div>
@@ -55,6 +58,7 @@
   <div class="studio-info">
     <div class="studio-description">
       <h2>More about this studio</h2>
+      <p><%= @studio.description %></p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ab dolore earum vero in quae enim illo, praesentium? Fugit ipsa assumenda ratione sed ut iure corrupti aliquid hic cum quibusdam consequatur aspernatur quasi ullam consectetur animi dolore eaque, natus maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at consequatur delectus porro doloremque fugit dolores non ratione.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquid, quisquam facere tempore dicta provident esse optio voluptatum aperiam. Assumenda rerum quis consequatur et sint, id necessitatibus incidunt soluta, nobis porro maiores. A!</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, asperiores, magni! Similique magni doloremque, minus molestiae error provident facilis laborum consequatur beatae. Deleniti atque odit commodi voluptatum fugit quos, hic nostrum repellat quasi explicabo cum laudantium animi adipisci non amet! Consequatur doloribus laboriosam, eius vel tempora perspiciatis dolores repudiandae cumque laudantium quam in recusandae ut, illo, fugit adipisci ducimus. Corporis!</p>
@@ -62,21 +66,19 @@
       <p>Want to know more? Contact <%= link_to "#{@studio.user.first_name} #{@studio.user.last_name}", profile_path(@studio.user) %>  for more details.</p>
     </div>
 
-    <div class="booking-form-container">
-      <% if @studio.user == current_user %>
-        <div class="owner-controls">
-          <%= link_to edit_studio_path(@studio), class: 'btn btn-outline' do %>
-            <i class="fas fa-pen-square"></i>
-          <% end %>
-          <%= link_to studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline' do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
-        </div>
-      <% else %>
+
+    <% if @studio.user == current_user %>
+      <div class="owner-controls">
+        <%= link_to "edit this studio", edit_studio_path(@studio), class: 'btn btn-outline' %>
+        <%= link_to "stop hosting", studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline' %>
+      </div>
+    <% end %>
+    <% if @studio.user != current_user %>
+      <div class="booking-form-container %>">
         <div class="booking-form">
           <%= render 'bookings/new'%>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

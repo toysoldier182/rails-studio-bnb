@@ -1,6 +1,35 @@
-.form-full-page {
-  background: blue;
+.full-page-form-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+  text-align: center;
+  background-image: linear-gradient(-155deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('https://wallpaperplay.com/walls/full/0/1/a/101026.jpg');
+  background-size: cover;
+
+  .full-page-form {
+    background: white;
+    padding: 32px 64px;
+    width: 50%;
+    border-radius: 4px;
+
+    h2 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .addtl-devise-links {
+      margin-top: 16px;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+      a {
+        margin-top: 16px;
+      }
+    }
+  }
 }
+
 
 .booking-form {
   background: white;

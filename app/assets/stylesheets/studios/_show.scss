@@ -41,9 +41,24 @@
   flex-direction: column;
   justify-content: space-between;
 
-  h1 {
-    font-size: 2.8em;
-    margin-bottom: 32px;
+  .studio-details-head {
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 1em;
+    }
+
+    a {
+      color: rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.75);
+        text-decoration: none;
+      }
+    }
   }
 
   i {
@@ -69,34 +84,33 @@
     color: rgba(0, 0, 0, 0.5);
 
     &:hover {
-      color: black;
+      color: rgba(0, 0, 0, 0.75);
+      text-decoration: none;
     }
   }
 }
 
 
+.owner-controls {
+  flex-basis: 30%;
+  flex-shrink: 0;
+  border-radius: 4px;
+  margin-left: 32px;
+  text-align: right;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  a {
+    font-size: 0.9em;
+    margin-left: 8px;
+  }
+}
+
 .booking-form-container {
   flex-basis: 30%;
   flex-shrink: 0;
+}
 
-  .owner-controls {
-    background: white;
-    border-radius: 4px;
-    padding: 32px;
-    margin-left: 32px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    i {
-      font-size: 1.5em;
-      margin: 8px;
-    }
-
-    .btn-outline {
-      margin: 10px;
-    }
-  }
+.hidden {
+  display: none;
 }
