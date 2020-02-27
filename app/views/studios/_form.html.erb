@@ -1,14 +1,15 @@
 <%= simple_form_for @studio do |f| %>
-  <%= f.error_notification %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name,
-                autofocus: true %>
-    <%= f.input :location %>
-    <%= f.input :price %>
-  </div>
+    <!-- <div class="form-inputs"> -->
+      <%= f.input :name, input_html: { class: 'input-fields' },
+                  autofocus: true%>
+      <%= f.input :location, input_html: { class: 'input-fields' }%>
+      <%= f.input :price, input_html: { class: 'input-fields' } %>
+    <!-- </div> -->
 
-  <div class="form-actions">
-    <%= f.button :submit, "Submit", class: "btn btn-success" %>
-  </div>
-<% end %>
+    <!-- <div class="form-actions"> -->
+      <%= f.button :submit, "Submit", class: "btn btn-outline" %>
+    <!-- </div> -->
+  <% end %>
+

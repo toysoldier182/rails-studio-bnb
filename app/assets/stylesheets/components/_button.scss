@@ -11,3 +11,16 @@
     background: rgba(255, 255, 255, 0.9);
   }
 }
+
+.btn-outline {
+  border: 1px solid black;
+  padding: 8px 24px;
+  background: white;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    background: black;
+    color: white;
+    text-decoration: none;
+  }
+}

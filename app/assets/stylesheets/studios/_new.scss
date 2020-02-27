@@ -1,0 +1,29 @@
+.input-fields {
+  border-radius: 5px;
+  border:1px;
+}
+
+#header {
+  text-align: center;
+
+}
+
+.form-holder {
+ display: flex;
+ width: 50%;
+ justify-content: center;
+ margin: auto;
+}
+
+.new-studio-form {
+  display: flex;
+ width: 80%;
+ flex-direction: column;
+ justify-content: center;
+ border: 1px solid lightblue;
+ margin: 20px;
+ padding: 30px;
+ border-radius: 5px;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
