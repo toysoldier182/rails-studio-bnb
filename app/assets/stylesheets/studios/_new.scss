@@ -1,29 +1,39 @@
+.background-style {
+  height: 100vh;
+  display: flex;
+  align-content: center;
+}
+
 .input-fields {
   border-radius: 5px;
-  border:1px;
+  border:1px solid;
 }
 
 #header {
   text-align: center;
-
 }
 
 .form-holder {
- display: flex;
- width: 50%;
- justify-content: center;
- margin: auto;
+  background-color: #FDFDFD;
+  display: flex;
+  width: 40%;
+  height: 50vh;
+  justify-content: center;
+  margin: auto;
+  align-content: center;
 }
 
 .new-studio-form {
   display: flex;
- width: 80%;
- flex-direction: column;
- justify-content: center;
- border: 1px solid lightblue;
- margin: 20px;
- padding: 30px;
- border-radius: 5px;
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  // border: 1px solid lightblue;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+
 
