@@ -2,57 +2,56 @@
   <div class="home-text">
     <div class="text-box">
      <h1>Welcome to StudioBnB</h1>
-      <p>Work in a world-class studio space to create your greatest work, at a reasonable price.<strong>Book today</strong>.</p>
+      <h5>Work in a world-class studio space to create your greatest work, at a reasonable price. <br><br><strong> Book today</strong>.</p>
       <% if !current_user %>
-        <p class="banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
+        <h5 class="banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
       <% end %>
     </div>
   </div>
-  <div class="button-box">
-    <button class="home-button"><%= link_to "Find studios", studios_path %></button>
-  </div>
+
 </div>
 
 <!-- <h4 class="mt-6"><%#= link_to "Browse all studios", studios_path %></h4>
  -->
-
-<div class="info-container">
-  <div class="info-text">
-    <h3>What we do</h3>
-    <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-        Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
-        используя Lorem Ipsum для распечатки образцов. </p>
+<div class="container">
+  <div class="info-container">
+    <div class="info-text">
+      <h3>What we do</h3>
+      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
+          Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+          используя Lorem Ipsum для распечатки образцов. </p>
+    </div>
+    <div class="info-image">
+    </div>
   </div>
-  <div class="info-image">
+  <div class="info-container">
+    <div class="info-image">
+    </div>
+    <div class="info-text">
+      <h3>Platinum-selling work in a world class studio</h3>
+      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
+          Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+          используя Lorem Ipsum для распечатки образцов. </p>
+    </div>
   </div>
-</div>
-<div class="info-container">
-  <div class="info-image">
-  </div>
-  <div class="info-text">
-    <h3>Platinum-selling work in a world class studio</h3>
-    <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-        Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
-        используя Lorem Ipsum для распечатки образцов. </p>
-  </div>
-</div>
-
-<h4 class="ml-4">Studios in demand now:</h4>
-<div class="studios m-2">
-  <% @studios.each do |studio| %>
-    <%= link_to studio_path(studio) do %>
-      <div class="studio-card", style="background-image: linear-gradient(-155deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.merriammusic.com%2F2016%2F02%2Frecording-studio-control-room-center.jpg&f=1&nofb=1'); background-size: cover;">
-        <div class="studio-card-info">
-          <h4><%= studio.name %></h4>
-          <p><i class="fas fa-map-marker-alt"></i> <%= studio.location %></p>
+  <h3 class="ml-4">Studios in demand now:</h3>
+  <div class="studios m-2">
+    <% @studios.each do |studio| %>
+      <%= link_to studio_path(studio) do %>
+        <div class="studio-card" rounded-sm, style="background-image: linear-gradient(-155deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.merriammusic.com%2F2016%2F02%2Frecording-studio-control-room-center.jpg&f=1&nofb=1'); background-size: cover;">
+          <div class="studio-card-info">
+            <h4><%= studio.name %></h4>
+            <p><i class="fas fa-map-marker-alt"></i> <%= studio.location %></p>
+          </div>
+          <div class="studio-card-price">
+            <p><i class="fas fa-pound-sign"></i> <%= studio.price %></p>
+          </div>
         </div>
-        <div class="studio-card-price">
-          <p><i class="fas fa-pound-sign"></i> <%= studio.price %></p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
+
 
 
 
