@@ -1,11 +1,13 @@
 
 .home-banner {
-  background-image: url("https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-  background-size: contain;
+  background-image: linear-gradient(-155deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),url("https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-basis: 0;
   //opacity: 0.6;
   height: 94vh;
+  position: relative;
 }
 
 .home-text {
@@ -20,10 +22,9 @@
 }
 
 .text-box {
-  background-color: rgba(244,244,244, 0.7);
-  box-shadow: 1px 0px 20px rgb(244,244,242);
   width: 80%;
   align-self: center;
+  color: white;
 }
 
 .button-box {

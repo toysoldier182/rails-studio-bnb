@@ -1,13 +1,17 @@
 .btn-banner {
-  background: white;
-  color: black;
-  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 8px 24px;
   border-radius: 2px;
   margin: 0 4px;
 
-  &:hover {
+  &:hover, {
     text-decoration: none;
     color: black;
+    font-weight: normal;
+    border: none;
     background: rgba(255, 255, 255, 0.9);
   }
 }
