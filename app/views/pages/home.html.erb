@@ -1,15 +1,15 @@
 <div class="home-banner">
   <div class="home-text">
     <div class="text-box">
-     <h2>Welcome to StudioBnB</h2>
-      <p>Here is a snazzy, punchy blip of unimportant information to get you excited about spending money on a recording studio owned by someone much wealthier than you. Book a studio <strong>today</strong>.</p>
+     <h1>Welcome to StudioBnB</h1>
+      <p>Work in a world-class studio space to create your greatest work, at a reasonable price.<strong>Book today</strong>.</p>
       <% if !current_user %>
         <p class="banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
       <% end %>
     </div>
   </div>
   <div class="button-box">
-    <button class="home-button">Find studios</button>
+    <button class="home-button"><%= link_to "Find studios", studios_path %></button>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
   <div class="info-image">
   </div>
   <div class="info-text">
-    <h3>Realise your potential</h3>
+    <h3>Platinum-selling work in a world class studio</h3>
     <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
         Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
         используя Lorem Ipsum для распечатки образцов. </p>
