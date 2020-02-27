@@ -64,6 +64,14 @@
   p {
     font-size: 1.3em;
   }
+
+  a {
+    color: rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      color: black;
+    }
+  }
 }
 
 
@@ -74,7 +82,7 @@
   .owner-controls {
     background: white;
     border-radius: 4px;
-    padding: 20px 32px;
+    padding: 32px;
     margin-left: 32px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -85,6 +93,10 @@
     i {
       font-size: 1.5em;
       margin: 8px;
+    }
+
+    .btn-outline {
+      margin: 10px;
     }
   }
 }
