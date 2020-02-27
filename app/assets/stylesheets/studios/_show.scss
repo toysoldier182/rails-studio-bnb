@@ -74,6 +74,18 @@
   }
 }
 
+.search-box {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.search {
+  padding: 20px;
+  width: 100%;
+  margin: 0px 20px;
+  justify-content: center;
+}
 
 .booking-form-container {
   flex-basis: 30%;

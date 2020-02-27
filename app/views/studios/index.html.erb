@@ -23,14 +23,18 @@
   </div>
 </div>
 
-<%= form_tag studios_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a studio"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="search-box">
+  <div class="search">
+    <%= form_tag studios_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a studio"
+      %>
+      <%= submit_tag "Search", class: "btn btn-outline" %>
+    <% end %>
+  </div>
+</div>
 
 <div class="studios">
   <% @studios.each do |studio| %>
