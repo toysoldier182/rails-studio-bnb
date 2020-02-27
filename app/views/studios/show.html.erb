@@ -1,9 +1,15 @@
-<!-- <%= link_to "view all studios", studios_path %> -->
 <div class="studio-container">
   <div class="studio-summary">
+    <div class="studio-details">
+      <h1><%= @studio.name %></h1>
+      <div class="studio-sub-details">
+        <p class="studio-location"><i class="fas fa-map-marker-alt"></i><%= @studio.location %></p>
+        <p class="studio-price"><i class="fas fa-pound-sign"></i><%= @studio.price %> / day</p>
+      </div>
+    </div>
+
     <div class="studio-photos">
       <div id="studio-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-
         <% if @studio.photos.attached? %>
           <ol class="carousel-indicators">
             <li data-target="#studio-carousel" data-slide-to="0" class="active"></li>
@@ -42,28 +48,34 @@
             <span class="sr-only">Next</span>
           </a>
         <% end %>
-
       </div>
     </div>
-    <div class="studio-info">
-      <div class="studio-details">
-        <h1><%= @studio.name %></h1>
-        <p><i class="fas fa-map-marker-alt"></i> <%= @studio.location %></p>
-        <p><i class="fas fa-pound-sign"></i> <%= @studio.price %></p>
-      </div>
-      <div class="studio-description">
-        <h5>Description</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ab dolore earum vero in quae enim illo, praesentium? Fugit ipsa assumenda ratione sed ut iure corrupti aliquid hic cum quibusdam consequatur aspernatur quasi ullam consectetur animi dolore eaque, natus maxime!</p>
+  </div>
 
-        <% if current_user == @studio.user %>
-          <%= link_to "Edit", edit_studio_path(@studio) %>
-          <%= link_to "Delete", studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
-        <% end %>
+  <div class="studio-info">
+    <div class="studio-description">
+      <h2>More about this studio</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ab dolore earum vero in quae enim illo, praesentium? Fugit ipsa assumenda ratione sed ut iure corrupti aliquid hic cum quibusdam consequatur aspernatur quasi ullam consectetur animi dolore eaque, natus maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at consequatur delectus porro doloremque fugit dolores non ratione.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquid, quisquam facere tempore dicta provident esse optio voluptatum aperiam. Assumenda rerum quis consequatur et sint, id necessitatibus incidunt soluta, nobis porro maiores. A!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, asperiores, magni! Similique magni doloremque, minus molestiae error provident facilis laborum consequatur beatae. Deleniti atque odit commodi voluptatum fugit quos, hic nostrum repellat quasi explicabo cum laudantium animi adipisci non amet! Consequatur doloribus laboriosam, eius vel tempora perspiciatis dolores repudiandae cumque laudantium quam in recusandae ut, illo, fugit adipisci ducimus. Corporis!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquid, quisquam facere tempore dicta provident esse optio voluptatum aperiam. Assumenda rerum quis consequatur et sint, id necessitatibus incidunt soluta, nobis porro maiores. A!</p>
+    </div>
 
-        <% if current_user != @studio.user  %>
-          <%= link_to "book this studio", new_studio_booking_path(@studio) %>
-        <% end %>
-      </div>
+    <div class="booking-form-container">
+      <% if @studio.user == current_user %>
+        <div class="owner-controls">
+          <%= link_to edit_studio_path(@studio), class: 'btn btn-outline' do %>
+            <i class="fas fa-pen-square"></i>
+          <% end %>
+          <%= link_to studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline' do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="booking-form">
+          <%= render 'bookings/new'%>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

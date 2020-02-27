@@ -1,44 +1,90 @@
 .studio-container {
-  padding: 16px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .studio-summary {
-  // border: 1px solid purple;
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60vh;
 }
 
 .studio-photos {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  margin-right: 16px;
-  flex-basis: 50%;
+  flex-basis: 65%;
+  flex-shrink: 0;
   height: 100%;
-  border-radius: 8px;
-
-  .carousel-inner {
-    border-radius: 8px;
-  }
+  border-radius: 4px;
+  width: 70%;
 }
 
 .studio-info {
-  // border: 1px solid green;
   flex-basis: 50%;
-
-  h1 {
-    font-size: 2em;
-  }
-
-  p, i {
-    margin: 0;
-    font-size: 1em;
-  }
+  padding: 32px 64px;
+  display: flex;
 }
 
 .studio-details {
-  margin-bottom: 32px;
+  background: white;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  margin-right: 10px;
+  border-radius: 4px;
+  flex-grow: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 2.8em;
+    margin-bottom: 32px;
+  }
+
+  i {
+    margin-right: 8px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    font-size: 1.2em;
+  }
 }
 
 .studio-description {
-  p{
-    margin-bottom: 16px;
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
+}
+
+
+.booking-form-container {
+  flex-basis: 30%;
+  flex-shrink: 0;
+
+  .owner-controls {
+    background: white;
+    border-radius: 4px;
+    padding: 20px 32px;
+    margin-left: 32px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    i {
+      font-size: 1.5em;
+      margin: 8px;
+    }
   }
 }

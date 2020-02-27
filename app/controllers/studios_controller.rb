@@ -6,7 +6,9 @@ class StudiosController < ApplicationController
     @studios = Studio.all
   end
 
-  def show; end
+  def show
+    @booking = Booking.new
+  end
 
   def new
     @studio = Studio.new
