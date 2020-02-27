@@ -5,16 +5,16 @@
       <div id="studio-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
         <ol class="carousel-indicators">
             <li data-target="#studio-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#studio-carousel" data-slide-to="1"></li>
-            <li data-target="#studio-carousel" data-slide-to="2"></li>
-            <li data-target="#studio-carousel" data-slide-to="3"></li>
+            <% @studio.photos[1..-1].each_with_index do |photo, index| %>
+              <li data-target="#studio-carousel" data-slide-to="<%= (index + 1) %>"></li>
+            <% end %>
           </ol>
 
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80" class="d-block w-100" alt="music studio banner image">
+            <%= cl_image_tag @studio.photos.first.key %>
           </div>
-          <% @studio.photos.each do |photo| %>
+          <% @studio.photos[1..-1].each do |photo| %>
             <div class="carousel-item">
               <%= cl_image_tag photo.key %>
             </div>
