@@ -27,8 +27,11 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    @booking = Booking.update(validate_booking)
-    redirect_to profile_path(current_user)
+    @booking.update(validate_booking)
+    respond_to do |format|
+      format.js { render "change_color", locals: { id: @booking.id, approval: @booking.approval } }
+      format.html { redirect_to profile_path(current_user) }
+    end
   end
 
   def destroy
