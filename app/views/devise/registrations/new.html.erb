@@ -1,29 +1,41 @@
-<h2>Sign up</h2>
+<div class="full-page-form-container">
+  <div class="full-page-form">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <h2>create an account</h2>
 
-  <div class="form-inputs devise-style">
-    <%= f.input :first_name,
-                autofocus: true %>
-    <%= f.input :last_name %>
-    <%= f.input :bio %>
-    <%= f.input :avatar, as: :file %>
-    <%= f.input :email,
-                required: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs devise-style">
+        <%= f.input :first_name,
+                    autofocus: true, label: false, placeholder: 'first name' %>
+        <%= f.input :last_name, label: false, placeholder: 'last name' %>
+        <%= f.input :bio, label: false, placeholder: 'tell us about yourself...' %>
+        <%= f.input :email,
+                    required: true,
+                    label: false,
+                    placeholder: 'email',
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    label: false,
+                    placeholder: 'password',
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    label: false,
+                    placeholder: 'confirm password',
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :avatar, as: :file, label: false %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "sign up", class: 'btn btn-outline' %>
+      </div>
+    <% end %>
+    <div class="addtl-devise-links">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

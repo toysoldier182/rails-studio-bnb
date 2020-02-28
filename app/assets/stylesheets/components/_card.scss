@@ -1,12 +1,12 @@
 ////////////////////////////////////////////
-///////////////// STUDIOS /////////////////
+///////////////// STUDIOS //////////////////
 ////////////////////////////////////////////
 
 .studio-card {
   border-radius: 2px;
   background: grey;
-  padding: 16px;
-  height: 250px;
+  padding: 24px;
+  height: 375px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -15,25 +15,31 @@
 
 .studio-card-info {
   h4 {
-    font-size: 1.2em;
-    margin: 0;
+    font-size: 1.5em;
+    margin-bottom: 4px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 
   p {
-    font-size: 0.7em;
+    font-size: 0.9em;
     margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 }
 
-  .studio-card-price {
-    i {
-      margin: 0;
-    }
-
-    p {
-      margin: 0;
-    }
+.studio-card-price {
+  i {
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 0.9em;
   }
+
+  p {
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.2em;
+  }
+}
 
 ////////////////////////////////////////////
 ///////////////// BOOKINGS /////////////////

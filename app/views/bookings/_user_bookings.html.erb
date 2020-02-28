@@ -18,22 +18,22 @@
 
 <% current_user.bookings.each do |booking| %>
   <%= link_to studio_path(booking.studio) do %>
-  <div class="bookings-card">
-    <div class="bookings-card-section">
-      <p><%= booking.studio.name %></p>
+    <div class="bookings-card">
+      <div class="bookings-card-section">
+        <p><%= booking.studio.name %></p>
+      </div>
+      <div class="bookings-card-section">
+        <p><%= booking.studio.user.first_name %> <%= booking.studio.user.last_name %></p>
+      </div>
+      <div class="bookings-card-section">
+        <p><%= booking.description %></p>
+      </div>
+      <div class="bookings-card-section">
+        <p><%= booking.booking_date_start %></p>
+      </div>
+      <div class="bookings-card-section">
+        <p><%= booking.booking_date_end %></p>
+      </div>
     </div>
-    <div class="bookings-card-section">
-      <p><%= booking.studio.user.first_name %> <%= booking.studio.user.last_name %></p>
-    </div>
-    <div class="bookings-card-section">
-      <p><%= booking.description %></p>
-    </div>
-    <div class="bookings-card-section">
-      <p><%= booking.booking_date_start %></p>
-    </div>
-    <div class="bookings-card-section">
-      <p><%= booking.booking_date_end %></p>
-    </div>
-  </div>
   <% end %>
 <% end %>
