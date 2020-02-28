@@ -1,10 +1,26 @@
+.searchbox {
+  display: flex;
+  border: 1px solid blue;
+  justify-content: center;
+  align-items: center;
+}
+
 .searchbar {
   form {
-
-  display: flex;
-
+    display: flex;
   }
-  border: 1px solid red;
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+.searchbar-med {
+  width: 75%;
+
+  form {
+    display: flex;
+  }
 
   .search-input {
     width: 100%;

@@ -1,29 +1,31 @@
-.homepage-banner {
+.studios-banner {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 175px;
+  padding: 48px 0;
+  background-image: linear-gradient(-155deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('https://wallpaperplay.com/walls/full/0/1/a/101026.jpg');
+  background-size: cover;
+  background-position: center;
 
-  .banner-text {
+  .studios-banner-text {
     font-size: 0.8em;
     color: white;
     z-index: 1;
-    position: absolute;
-    overflow: none;
-    width: 50vw;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .banner-cta {
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    .studios-banner-cta {
       margin-top: 32px;
     }
-  }
-
-  .opacity {
-    background: rgba(240,221,221,0.2);
-    border-radius: 5px;
-
-
   }
 }
 
