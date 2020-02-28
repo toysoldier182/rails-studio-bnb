@@ -1,18 +1,30 @@
 .btn-banner {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-weight: bold;
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
   border: 1px solid white;
   padding: 8px 24px;
   border-radius: 2px;
-  margin: 0 4px;
 
   &:hover, {
     text-decoration: none;
     color: black;
-    font-weight: normal;
     border: none;
     background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.home-button {
+  width: 150px;
+  height: 75px;
+  border-radius: 10px;
+  background-color: blue;
+  border: none;
+  color: white;
+  
+  &:hover {
+    background: black;
+    color: white;
+    text-decoration: none;
   }
 }
 
