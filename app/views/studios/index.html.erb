@@ -25,7 +25,7 @@
 
 <div class="search-box">
   <div class="search">
-    <%= form_tag studios_path, method: :get, remote: true do %>
+    <%= form_tag studios_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
