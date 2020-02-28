@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_132027) do
     t.date "booking_date_start"
     t.date "booking_date_end"
     t.string "description"
-    t.boolean "approval"
+    t.boolean "approval", default: false
     t.bigint "user_id", null: false
     t.bigint "studio_id", null: false
     t.datetime "created_at", precision: 6, null: false

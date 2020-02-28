@@ -28,6 +28,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.update(validate_booking)
+    redirect_to profile_path(current_user)
   end
 
   def destroy
