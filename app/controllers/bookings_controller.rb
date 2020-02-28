@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.studio = @studio
     @booking.user = current_user
     if @booking.save
-      redirect_to studio_path(@booking.studio)
+      redirect_to profile_path(current_user)
     else
       render :new
     end

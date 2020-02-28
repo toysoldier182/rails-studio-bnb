@@ -1,14 +1,12 @@
-///////////////// USERS /////////////////
-
-//-------- user cards here --------//
-
-///////////////// STUDIOS /////////////////
+////////////////////////////////////////////
+///////////////// STUDIOS //////////////////
+////////////////////////////////////////////
 
 .studio-card {
   border-radius: 2px;
   background: grey;
-  padding: 16px;
-  height: 250px;
+  padding: 24px;
+  height: 375px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -17,57 +15,41 @@
 
 .studio-card-info {
   h4 {
-    font-size: 1.2em;
-    margin: 0;
+    font-size: 1.5em;
+    margin-bottom: 4px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 
   p {
-    font-size: 0.7em;
+    font-size: 0.9em;
     margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 }
 
-  .studio-card-price {
-    i {
-      margin: 0;
-    }
-
-    p {
-      margin: 0;
-    }
+.studio-card-price {
+  i {
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 0.9em;
   }
 
-// Booking Cards - used on profile page
+  p {
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.2em;
+  }
+}
 
-// .booking-card {
-//   display: flex;
-//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-//   height: 150px;
-//   width: 600px;
-//   font-size: 14px;
-//   margin: 20px 0px;
-
-//   img {
-//     background-size: contain;
-//     // background-image: url(https://audioxpress.com/assets/upload/images/1/20190305171546_HomeStudio-P1251163Web.jpg);
-//   }
-
-//   .booking-info {
-//     display: flex;
-//     flex-direction: column;
-//     padding-top: 10px;
-//     padding-left: 10px;
-//   }
-
-// }
-
+////////////////////////////////////////////
 ///////////////// BOOKINGS /////////////////
+////////////////////////////////////////////
 
 .bookings-card-headers {
   display: flex;
   justify-content: space-between;
   padding: 6px 6px 0 6px;
-  margin: 6px 6px 12px 6px;
+  margin: 6px 0 12px 0;
 
   .bookings-card-section {
     width: 25%;
@@ -77,7 +59,7 @@
 
     p {
       margin: 0;
-      font-size: 0.65em;
+      font-size: 0.8em;
     }
   }
 }
@@ -89,8 +71,12 @@
   background: white;
   border-radius: 4px;
   padding: 6px;
-  margin: 6px;
+  margin: 6px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.6);
+  }
 
   .bookings-card-section {
     width: 25%;
@@ -99,7 +85,7 @@
 
     p {
       margin: 0;
-      font-size: 0.7em;
+      font-size: 0.9em;
     }
   }
 }

@@ -1,23 +1,38 @@
 .btn-banner {
-  background: white;
-  color: black;
-  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 8px 24px;
   border-radius: 2px;
   margin: 0 4px;
 
-  &:hover {
+  &:hover, {
     text-decoration: none;
     color: black;
+    font-weight: normal;
+    border: none;
     background: rgba(255, 255, 255, 0.9);
   }
 }
 
-.btn-outline {
-  border: 1px solid black;
-  padding: 8px 24px;
-  background: white;
-  text-decoration: none;
-  color: black;
+.home-button {
+  width: 150px;
+  height: 75px;
+  border-radius: 10px;
+  background-color: blue;
+  border: none;
+  color: white;
+
+  .btn-outline {
+    border: 1px solid black;
+    padding: 8px 24px;
+    border-radius: 2px;
+    background: white;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 
   &:hover {
     background: black;
