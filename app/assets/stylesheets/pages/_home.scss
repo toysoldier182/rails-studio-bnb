@@ -5,10 +5,8 @@
   height: 94vh;
   position: relative;
   padding-top: 20vh;
-  border: 1px solid yellow;
 
   .home-text {
-    border: 1px solid blue;
     text-align: left;
     margin-left: 6em;
     width: 60%;
@@ -16,25 +14,44 @@
     text-size: 60%;
 
     .text-box {
-      border: 1px solid purple;
       width: 80%;
       align-self: center;
       color: white;
       margin-bottom: 40px;
 
       h2 {
-        margin: 0;
+        margin-bottom: 16px;
+        font-size: 3.3em;
       }
 
       h3{
         margin: 0;
+        font-size: 1.9em;
       }
     }
-      .banner-cta {
-
-        border: 1px solid green;
-      }
   }
+
+  .banner-cta {
+      display: flex;
+      width: 82%;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        color: white;
+        margin: 0;
+        font-size: 1.5em;
+      }
+
+      .searchbar {
+        width: 50%;
+        flex-basis: 57%;
+
+        .search-input {
+          margin-right: 10px;
+        }
+      }
+    }
 
   .scroll-down {
     position: absolute;
@@ -44,11 +61,11 @@
 
   }
 
-    i {
-      color: rgba(255, 255, 255, 0.3);
-      font-size: 3em;
-      transition: 3s ease-in-out;
-    }
+  i {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 3em;
+    transition: 3s ease-in-out;
+  }
 }
 
 
