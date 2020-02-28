@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#show'
 
   resources :studios do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :update]
   end
 
   resources :users, only: [] do
-   resources :bookings, except: [:new, :create]
+   resources :bookings, except: [:new, :create, :update]
   end
 end

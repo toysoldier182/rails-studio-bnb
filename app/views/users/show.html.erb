@@ -19,15 +19,17 @@
   </div>
 
   <div class="profile-bookings">
-    <% if current_user.studios.first.bookings.first != nil %>
-      <div class="bookings-host">
-        <h5>booking requests</h5>
-        <%= render "bookings/host_bookings" %>
-      </div>
+    <% if !current_user.studios.empty? %>
+      <% if current_user.studios.first.bookings.first != nil %>
+        <div class="bookings-host">
+          <h5>studio booking requests</h5>
+          <%= render "bookings/host_bookings" %>
+        </div>
+      <% end %>
     <% end %>
     <% if current_user.bookings %>
       <div class="bookings-rent">
-        <h5>your upcoming bookings</h5>
+        <h5>my upcoming bookings</h5>
         <%= render "bookings/user_bookings" %>
       </div>
     <% end %>
