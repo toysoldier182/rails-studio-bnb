@@ -23,15 +23,16 @@
   background-color: blue;
   border: none;
   color: white;
-  
-.btn-outline {
-  border: 1px solid black;
-  padding: 8px 24px;
-  border-radius: 2px;
-  background: white;
-  text-decoration: none;
-  color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .btn-outline {
+    border: 1px solid black;
+    padding: 8px 24px;
+    border-radius: 2px;
+    background: white;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 
   &:hover {
     background: black;
