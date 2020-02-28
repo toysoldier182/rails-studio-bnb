@@ -1,11 +1,10 @@
 <div class="homepage-banner">
   <div class="banner-text opacity">
       <h2>Where musicians find great workspaces</h2>
-      <p class="lead">Find a studio near you:</p>
-
       <% if !current_user %>
         <p class="banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
       <% end %>
+      <p class="lead">Find a studio near you:</p>
       <div class="search-box">
         <div class="search bt-outline">
           <%= form_tag studios_path, method: :get do %>
