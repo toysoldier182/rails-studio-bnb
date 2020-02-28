@@ -2,33 +2,30 @@
   <div class="home-text">
     <div class="text-box">
       <h2>Welcome to StudioBnB</h2>
-      <h3>Work in a world-class studio space to create your greatest work, at a reasonable price.<br><br></h3>
-
+      <h3>Work in a world-class studio space to create your greatest work, at a reasonable price.</h3>
+    </div>
       <div class="banner-cta">
-
+        <div class="searchbar">
           <%= form_tag studios_path, method: :get do %>
-                 <%= text_field_tag :query,
-                   params[:query],
-                   class: "form-control",
-                   placeholder: "Find a studio"
-                 %><%= submit_tag "Search", class: 'btn-banner' %>
-               <% end %>
-
-          <p>or</p>
-          <p><%= link_to "browse ours studios", studios_path, class: 'btn-banner' %></p>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control search-input",
+              placeholder: "find a studio"
+            %>
+            <%= submit_tag "search", class: 'btn-banner' %>
+          <% end %>
+        </div>
+        <p>or</p>
+        <p><%= link_to "browse ours studios", studios_path, class: 'btn-banner' %></p>
       </div>
-    </div>
 
-    <div class="page-scroll text-center justify-content-center">
-      <a href="#top" class="btn btn-circle">
-          <i class="fa fa-angle-down fa-2x animated"></i>
-      </a>
-    </div>
   </div>
+    <a href="#learn-more" class="scroll-down">
+      <i class="fa fa-chevron-down"></i>
+    </a>
 </div>
 
-
-<div class="container mt-5 pt-2">
+<div id="learn-more" class="container mt-5 pt-2">
   <h2 class="text-center">We help you find your dream studio</h2>
 
   <div class="row justify-content-center">
