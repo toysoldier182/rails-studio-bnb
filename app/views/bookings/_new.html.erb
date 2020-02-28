@@ -1,0 +1,26 @@
+<%= simple_form_for [@studio, @booking], class: 'booking-form' do |f| %>
+  <%= f.error_notification %>
+
+  <h5>book this studio</h5>
+
+  <div class="form-inputs">
+    <%= f.input :description,
+                as: :text,
+                label: false,
+                placeholder: 'Tell us about your project...',
+                autofocus: true %>
+    <p>from</p>
+    <%= f.input :booking_date_start, as: :date, html5: true, label: false %>
+    <p>to</p>
+    <%= f.input :booking_date_end, as: :date, html5: true, label: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "submit", class: 'btn btn-outline' %>
+  </div>
+<% end %>
+
+
+
+
+

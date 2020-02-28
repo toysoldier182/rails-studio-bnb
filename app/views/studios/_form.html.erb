@@ -3,13 +3,14 @@
 
   <div class="form-inputs">
     <%= f.input :name,
-                autofocus: true, label: false, placeholder: 'Studio Name' %>
-    <%= f.input :location %>
-    <%= f.input :price %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                autofocus: true, label: false, placeholder: 'studio name' %>
+    <%= f.input :location, label: false, placeholder: 'address' %>
+    <%= f.input :price, label: false, placeholder: 'price per day' %>
+    <%= f.input :description, as: :text, label: false, placeholder: 'details about your studio...' %>
+    <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Submit", class: "btn btn-success" %>
+    <%= f.button :submit, "submit", class: "btn btn-outline" %>
   </div>
 <% end %>

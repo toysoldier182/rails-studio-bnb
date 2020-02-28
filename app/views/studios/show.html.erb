@@ -1,26 +1,48 @@
-<!-- <%= link_to "view all studios", studios_path %> -->
 <div class="studio-container">
   <div class="studio-summary">
+    <div class="studio-details">
+      <div class="studio-details-head">
+        <h1><%= @studio.name %></h1>
+        <p>hosted by <%= link_to "#{@studio.user.first_name} #{@studio.user.last_name}", profile_path(@studio.user) %></p>
+      </div>
+      <div class="studio-details-foot">
+        <p class="studio-location"><i class="fas fa-map-marker-alt"></i><%= @studio.location %></p>
+        <p class="studio-price"><i class="fas fa-pound-sign"></i><%= @studio.price %> / day</p>
+      </div>
+    </div>
+
     <div class="studio-photos">
       <div id="studio-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-        <ol class="carousel-indicators">
+        <% if @studio.photos.attached? %>
+          <ol class="carousel-indicators">
             <li data-target="#studio-carousel" data-slide-to="0" class="active"></li>
             <% @studio.photos[1..-1].each_with_index do |photo, index| %>
               <li data-target="#studio-carousel" data-slide-to="<%= (index + 1) %>"></li>
             <% end %>
           </ol>
+        <% end %>
 
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= cl_image_tag @studio.photos.first.key %>
-          </div>
-          <% @studio.photos[1..-1].each do |photo| %>
-            <div class="carousel-item">
-              <%= cl_image_tag photo.key %>
+        <% if @studio.photos.attached? %>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @studio.photos.first.key %>
             </div>
-          <% end %>
-        </div>
-        <a class="carousel-control-prev" href="#studio-carousel" role="button" data-slide="prev">
+            <% @studio.photos[1..-1].each do |photo| %>
+              <div class="carousel-item">
+                <%= cl_image_tag photo.key %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.seattlefish.com%2Fwp-content%2Fthemes%2Fseattlefish%2Fimg%2Fplaceholder.png&f=1&nofb=1" alt="no image vailable">
+            </div>
+          </div>
+        <% end %>
+
+        <% if @studio.photos.attached? %>
+          <a class="carousel-control-prev" href="#studio-carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
@@ -28,27 +50,35 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
-      </div>
-    </div>
-    <div class="studio-info">
-      <div class="studio-details">
-        <h1><%= @studio.name %></h1>
-        <p><i class="fas fa-map-marker-alt"></i> <%= @studio.location %></p>
-        <p><i class="fas fa-pound-sign"></i> <%= @studio.price %></p>
-      </div>
-      <div class="studio-description">
-        <h5>Description</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ab dolore earum vero in quae enim illo, praesentium? Fugit ipsa assumenda ratione sed ut iure corrupti aliquid hic cum quibusdam consequatur aspernatur quasi ullam consectetur animi dolore eaque, natus maxime!</p>
-
-        <% if current_user == @studio.user %>
-          <%= link_to "Edit", edit_studio_path(@studio) %>
-          <%= link_to "Delete", studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
-        <% end %>
-
-        <% if current_user != @studio.user  %>
-          <%= link_to "book this studio", new_studio_booking_path(@studio) %>
         <% end %>
       </div>
     </div>
+  </div>
+
+  <div class="studio-info">
+    <div class="studio-description">
+      <h2>More about this studio</h2>
+      <p><%= @studio.description %></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ab dolore earum vero in quae enim illo, praesentium? Fugit ipsa assumenda ratione sed ut iure corrupti aliquid hic cum quibusdam consequatur aspernatur quasi ullam consectetur animi dolore eaque, natus maxime! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at consequatur delectus porro doloremque fugit dolores non ratione.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquid, quisquam facere tempore dicta provident esse optio voluptatum aperiam. Assumenda rerum quis consequatur et sint, id necessitatibus incidunt soluta, nobis porro maiores. A!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, asperiores, magni! Similique magni doloremque, minus molestiae error provident facilis laborum consequatur beatae. Deleniti atque odit commodi voluptatum fugit quos, hic nostrum repellat quasi explicabo cum laudantium animi adipisci non amet! Consequatur doloribus laboriosam, eius vel tempora perspiciatis dolores repudiandae cumque laudantium quam in recusandae ut, illo, fugit adipisci ducimus. Corporis!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquid, quisquam facere tempore dicta provident esse optio voluptatum aperiam. Assumenda rerum quis consequatur et sint, id necessitatibus incidunt soluta, nobis porro maiores. A!</p>
+      <p>Want to know more? Contact <%= link_to "#{@studio.user.first_name} #{@studio.user.last_name}", profile_path(@studio.user) %>  for more details.</p>
+    </div>
+
+
+    <% if @studio.user == current_user %>
+      <div class="owner-controls">
+        <%= link_to "edit this studio", edit_studio_path(@studio), class: 'btn btn-outline' %>
+        <%= link_to "stop hosting", studio_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline' %>
+      </div>
+    <% end %>
+    <% if @studio.user != current_user %>
+      <div class="booking-form-container %>">
+        <div class="booking-form">
+          <%= render 'bookings/new'%>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
