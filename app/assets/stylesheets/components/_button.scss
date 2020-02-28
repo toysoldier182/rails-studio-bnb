@@ -37,3 +37,13 @@
   color: black;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.btn-simple {
+  background: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.7);
+
+  &:hover {
+    color: black;
+  }
+}

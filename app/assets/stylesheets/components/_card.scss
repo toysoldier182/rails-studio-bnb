@@ -73,6 +73,7 @@
   padding: 6px;
   margin: 6px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
 
   &:hover {
     background: rgba(255, 255, 255, 0.6);
@@ -86,6 +87,25 @@
     p {
       margin: 0;
       font-size: 0.9em;
+    }
+  }
+
+  .bookings-card-host-controls {
+    display: flex;
+    position: absolute;
+    top: 37;
+    right: 0;
+
+    i {
+      margin-right: 8px;
+    }
+
+    .confirm:hover {
+      color: rgb(23, 233, 25);
+    }
+
+    .deny:hover {
+      color: red;
     }
   }
 }
