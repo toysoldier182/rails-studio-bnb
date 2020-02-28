@@ -1,20 +1,8 @@
 <div class="homepage-banner">
   <div class="banner-text opacity">
-      <h2>Where musicians find great workspaces</h2>
-      <p class="lead">Find a studio near you:</p>
-      <div class="search-box">
-        <div class="search bt-outline">
-          <%= form_tag studios_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Find a studio"
-            %>
-            <%= submit_tag "Search", class: "btn btn-outline" %>
-          <% end %>
-        </div>
-      </div>
-  </div>
+
+      <div class="search-box mt-4">
+
 
     <div class="searchbar searchbar-med">
       <%= form_tag studios_path, method: :get do %>
@@ -26,6 +14,9 @@
         <%= submit_tag "search", class: "btn-outline" %>
       <% end %>
     </div>
+      </div>
+  </div>
+
   </div>
 
 

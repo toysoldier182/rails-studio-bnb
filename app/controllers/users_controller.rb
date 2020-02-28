@@ -8,7 +8,3 @@ class UsersController < ApplicationController
     params.require(:avatar).permit(:title, :body, :photo)
   end
 end
-  #user profile
-
-
-
