@@ -1,10 +1,20 @@
-<div class="studios-banner">
-  <div class="studios-banner-text">
-    <h3>Where musicians find great workspaces</h3>
-
-    <% if !current_user %>
-      <p class="studios-banner-cta"><%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %> or <%= link_to "log in", new_user_session_path, class: 'btn-banner' %></p>
-    <% end %>
+<div class="homepage-banner">
+  <div class="banner-text opacity">
+      <h2>Where musicians find great workspaces</h2>
+      <p class="lead">Find a studio near you:</p>
+      <div class="search-box">
+        <div class="search bt-outline">
+          <%= form_tag studios_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a studio"
+            %>
+            <%= submit_tag "Search", class: "btn btn-outline" %>
+          <% end %>
+        </div>
+      </div>
+  </div>
 
     <div class="searchbar searchbar-med">
       <%= form_tag studios_path, method: :get do %>
