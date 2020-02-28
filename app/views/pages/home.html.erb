@@ -1,20 +1,30 @@
-
 <div class="home-banner">
-            <div class="home-text">
-                    <div class="text-box">
-                     <h1>Welcome to StudioBnB</h1>
-                      <h3>Work in a world-class studio space to create your greatest work, at a reasonable price.<br><br></h3>
-                      <% if !current_user %>
-                        <%= link_to "sign up", new_user_registration_path, class: 'btn-banner' %></p>
-                      <% end %>
-                    </div>
-              </div>
-              <div class="page-scroll text-center justify-content-center">
-                <a href="#top" class="btn btn-circle">
-                    <i class="fa fa-angle-down fa-2x animated"></i>
-                </a>
-              </div>
-            </div>
+  <div class="home-text">
+    <div class="text-box">
+      <h2>Welcome to StudioBnB</h2>
+      <h3>Work in a world-class studio space to create your greatest work, at a reasonable price.<br><br></h3>
+
+      <div class="banner-cta">
+
+          <%= form_tag studios_path, method: :get do %>
+                 <%= text_field_tag :query,
+                   params[:query],
+                   class: "form-control",
+                   placeholder: "Find a studio"
+                 %><%= submit_tag "Search", class: 'btn-banner' %>
+               <% end %>
+
+          <p>or</p>
+          <p><%= link_to "browse ours studios", studios_path, class: 'btn-banner' %></p>
+      </div>
+    </div>
+
+    <div class="page-scroll text-center justify-content-center">
+      <a href="#top" class="btn btn-circle">
+          <i class="fa fa-angle-down fa-2x animated"></i>
+      </a>
+    </div>
+  </div>
 </div>
 
 
