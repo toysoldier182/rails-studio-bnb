@@ -1,0 +1,8 @@
+if(<%= approval %> == true) {
+  document.getElementById("booking-<%= id %>").classList.add('bg-success')
+  document.getElementById('booking-<%= id %>').children[0].classList.add('white')
+
+} else {
+  document.getElementById("booking-<%= id %>").classList.remove('bg-success')
+  document.getElementById('booking-<%= id %>').children[0].classList.remove('white')
+}
